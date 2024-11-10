@@ -3,115 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doação Solidária</title>
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Corpo da página */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-        }
-
-        /* Estilos do container principal */
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .container h1 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        /* Estilos para a imagem do QR Code */
-        .qrcode {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-        }
-
-        /* Botão para copiar a chave Pix */
-        .pix-info {
-            margin-top: 10px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .copy-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .copy-button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Mensagem de cópia */
-        .copy-success {
-            display: none;
-            color: #28a745;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Projeto Solidário - Doações</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Projeto Solidário</h1>
+        <p>Doações de alimentos, produtos de higiene e mais para quem precisa.</p>
+    </header>
 
-<div class="container">
-    <h1>Faça uma Doação Solidária</h1>
-    <p>Contribua com nossa causa através de Pix.</p>
+    <main>
+        <!-- Seção sobre o projeto -->
+        <section id="sobre">
+            <h2>Sobre o Projeto</h2>
+            <p>Nosso objetivo é coletar e distribuir doações para melhorar as condições de vida de pessoas em situação de vulnerabilidade.</p>
+        </section>
 
-    <!-- QR Code do Pix -->
-    <img src="qrcode_pix.png" alt="QR Code para Doação Pix" class="qrcode">
+        <!-- Seção de parcerias -->
+        <section id="parcerias">
+            <h2>Parcerias Principais</h2>
+            <p>Contamos com a ajuda de empresas locais, como mercados e farmácias, que nos auxiliam com doações e logística.</p>
+        </section>
 
-    <!-- Informação e botão para copiar a chave Pix -->
-    <p class="pix-info">Chave Pix: <span id="pixKey">exemplo@pix.com</span></p>
-    <button class="copy-button" onclick="copyPixKey()">Copiar Chave Pix</button>
+        <!-- Seção para doação -->
+        <section id="doacao">
+            <h2>Faça sua Doação</h2>
+            <p>Contribua com nosso projeto e ajude a transformar vidas!</p>
+            <button onclick="exibirPix()">Doe via Pix</button>
+            <p id="pix-info" style="display: none;">Chave Pix: <strong>exemplo@pix.com.br</strong></p>
+        </section>
+    </main>
 
-    <!-- Mensagem de sucesso ao copiar -->
-    <p class="copy-success" id="copySuccess">Chave Pix copiada!</p>
-</div>
+    <footer>
+        <p>&copy; 2024 Projeto Solidário</p>
+        <p>Siga-nos nas redes sociais</p>
+    </footer>
 
-<script>
-    function copyPixKey() {
-        // Obtém o texto da chave Pix
-        const pixKey = document.getElementById("pixKey").textContent;
-
-        // Copia para a área de transferência
-        navigator.clipboard.writeText(pixKey).then(() => {
-            // Exibe mensagem de sucesso
-            const successMessage = document.getElementById("copySuccess");
-            successMessage.style.display = "block";
-
-            // Esconde a mensagem após alguns segundos
-            setTimeout(() => {
-                successMessage.style.display = "none";
-            }, 3000);
-        });
-    }
-</script>
+    <script>
+        // Função para exibir a chave Pix ao clicar no botão
+        function exibirPix() {
+            document.getElementById('pix-info').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
