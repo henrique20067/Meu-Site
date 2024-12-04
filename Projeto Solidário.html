@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Solidário - Doações</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: #2b6777;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+            color: #d1e8e4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilos para o conteúdo principal */
+        main {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2b6777;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #52ab98;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #468c83;
+        }
+
+        #pix-info {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #333;
+            display: none;
+            text-align: center;
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #2b6777;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+            color: #d1e8e4;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para as logos dos parceiros no rodapé */
+        .parceiros-logo-footer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .parceiros-logo-footer img {
+            max-width: 150px;
+            max-height: 70px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .parceiros-logo-footer img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para dispositivos móveis */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+
+            .parceiros-logo-footer img {
+                max-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Projeto Solidário</h1>
+        <p>Doações de alimentos, produtos de higiene e mais para quem precisa.</p>
+    </header>
+
+    <main>
+        <!-- Seção sobre o projeto -->
+        <section id="sobre">
+            <h2>Sobre o Projeto</h2>
+            <p>Nosso objetivo é coletar e distribuir doações para melhorar as condições de vida de pessoas em situação de vulnerabilidade. Trabalhamos de perto com comunidades carentes, identificando as necessidades mais urgentes e direcionando nossas ações para aquelas que mais precisam de apoio. Acreditamos no poder da solidariedade e da união, por isso, convidamos empresas e indivíduos a se juntarem a nós nesse movimento de transformação social.</p>
+            
+            <p>Além de alimentos e produtos de higiene, buscamos fornecer outros recursos essenciais para dignificar a vida das pessoas, como roupas, material escolar e itens de cuidado pessoal. Cada doação faz uma grande diferença, e juntos podemos construir uma rede de apoio sólida e confiável, capaz de impactar positivamente a vida de muitas famílias.</p>
+
+            <p>Nosso trabalho é feito com transparência, eficiência e carinho. Agradecemos a todos os parceiros e colaboradores que tornam esse projeto possível e convidamos você a se envolver, seja com doações ou como voluntário, para ajudar a levar esperança a mais pessoas.</p>
+        </section>
+
+        <!-- Seção para doação -->
+        <section id="doacao" style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh; text-align: center;">
+            <h2>Faça sua Doação</h2>
+            <p>Contribua com nosso projeto e ajude a transformar vidas!</p>
+            <img src="qrcode-pix.png" alt="QrCode PIX" style="max-width: 200px; margin: 20px 0;">
+            <p id="pix-info">Chave Pix: <strong>exemplo@pix.com.br</strong></p>
+        </section>
+    
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Projeto Solidário</p>
+        <p>Siga-nos nas redes sociais</p>
+
+        <!-- Logos dos parceiros no rodapé -->
+        <div class="parceiros-logo-footer">
+            <!-- Adicione mais logos conforme necessário -->
+        </div>
+    </footer>
+
+    <script>
+        // Função para exibir a chave Pix ao clicar no botão
+        function exibirPix() {
+            document.getElementById('pix-info').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
